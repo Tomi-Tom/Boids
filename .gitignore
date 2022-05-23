@@ -1,0 +1,5 @@
+Boids
+*.o
+.vscode
+*.gcda
+*.gcno
