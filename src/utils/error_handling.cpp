@@ -15,7 +15,7 @@ static bool is_integer(const string str){
     return regex_match(str, regex("[0-9]+"));
 }
 
-int error_handling(int argc, char **argv, char **env)
+int error_handling(int argc, char const **argv, char const **env)
 {
     if (env == NULL)
         return FAILURE;
@@ -25,7 +25,7 @@ int error_handling(int argc, char **argv, char **env)
         return SUCCESS;
     if (!is_integer(argv[1]))
         return FAILURE;
-    if (0 >= atoi(argv[1]) or atoi(argv[1]) > 500)
+    if (0 >= stoi(argv[1]) or stoi(argv[1]) > 500)
         return FAILURE;
     return SUCCESS;
 }

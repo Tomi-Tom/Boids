@@ -7,5 +7,5 @@
 
 #pragma once
 
-int error_handling(int argc, char **argv, char **env);
+int error_handling(int argc, char const **argv, char const **env);
 int help(void);

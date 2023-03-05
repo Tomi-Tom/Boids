@@ -13,7 +13,7 @@ using namespace std;
 int help(void)
 {
     cout <<                                                     \
-    "+--------------------------------------------------+\n"    \
+    "\n+--------------------------------------------------+\n"  \
     "|                                                  |\n"    \
     "|               THE BOIDS - PROJECT                |\n"    \
     "|                                                  |\n"    \
@@ -21,7 +21,8 @@ int help(void)
     "USAGE :\n"                                                 \
     "   ./Boids [NUMBER]\n\n"                                   \
     "OPTIONS :\n"                                               \
-    "   - NUMBER => The number of Boids you want to create"        \
+    "   - NUMBER => The number of Boids you want to create\n"   \
+    "                       {between 0 and 500}\n\n"            \
     << endl;
     return SUCCESS;
 }
