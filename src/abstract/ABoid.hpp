@@ -28,6 +28,8 @@ namespace boids {
             void setSpeed(int speed) override { this->_speed = speed; };
             void setAngle(double angle) override { this->_angle = angle; };
 
+            virtual void simulate() override;
+
         private :
             Position _position;
             int _speed;
