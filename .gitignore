@@ -3,3 +3,5 @@ Boids
 .vscode
 *.gcda
 *.gcno
+build
+.idea
