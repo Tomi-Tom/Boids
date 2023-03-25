@@ -8,7 +8,7 @@
 
 boids::Factory::Factory() {
     this->dict.insert({"basic", []() -> IBoid *{
-        IBoid *boid = new ABoid("basic", 1, 10, 0);
+        IBoid *boid = new ABoid("basic", 0.1, 10);
         return boid;
     }});
 }

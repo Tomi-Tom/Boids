@@ -8,8 +8,8 @@
 namespace boids {
 
     struct Position {
-        int x;
-        int y;
+        double x;
+        double y;
     };
 
     class IBoid {
@@ -19,12 +19,12 @@ namespace boids {
             ~IBoid() = default;
 
             virtual Position getPosition() = 0;
-            virtual int getSpeed() = 0;
+            virtual double getSpeed() = 0;
             virtual int getRange() = 0;
             virtual double getAngle() = 0;
 
             virtual void setPosition(Position pos) = 0;
-            virtual void setSpeed(int speed) = 0;
+            virtual void setSpeed(double speed) = 0;
             virtual void setAngle(double angle) = 0;
 
             virtual void simulate() = 0;

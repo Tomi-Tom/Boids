@@ -24,7 +24,7 @@ namespace boids {
             sf::Event _event;
             std::vector<IBoid *> _boids;
 
-            sf::Sprite _skin;
+            sf::Texture _skin;
 
             void pollEvent();
             void simulateBoids();
