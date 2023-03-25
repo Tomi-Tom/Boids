@@ -8,8 +8,25 @@ project(Boids)
 include_directories(include)
 include_directories(include/class)
 
-add_executable(
-    Boids
+add_executable(Boids
         src/main.cpp
         src/abstract/ABoid.cpp
-)
+        )
+
+if (WIN32)
+    set(SFML_DIR "C:/SFML-2.5.1/lib/cmake/SFML")
+    find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
+    target_link_libraries(Boids
+            sfml-graphics
+            sfml-window
+            sfml-system
+            )
+elseif (UNIX AND NOT APPLE)
+    find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
+    target_link_libraries(Boids
+            sfml-graphics
+            sfml-window
+            sfml-system
+            pthread
+            )
+endif()
