@@ -19,7 +19,10 @@ namespace boids {
 
         private:
             sf::RenderWindow *_window;
+            sf::Event _event;
             IBoid *_boids;
+
+            void pollEvent();
     };
 
 }
