@@ -7,10 +7,14 @@ project(Boids)
 
 include_directories(include)
 include_directories(include/class)
+include_directories(include/class/interface)
+include_directories(include/class/abstract)
+include_directories(src/playground)
 
 add_executable(Boids
         src/main.cpp
-        src/abstract/ABoid.cpp
+        include/class/abstract/ABoid.cpp
+        src/playground/Playground.cpp
         )
 
 if (WIN32)
