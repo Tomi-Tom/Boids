@@ -15,6 +15,7 @@ add_executable(Boids
         src/main.cpp
         include/class/abstract/ABoid.cpp
         src/playground/Playground.cpp
+        src/factory/Factory.cpp
         )
 
 if (WIN32)

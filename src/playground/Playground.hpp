@@ -6,13 +6,15 @@
 #define BOIDS_PLAYGROUND_HPP
 
 #include <SFML/Graphics.hpp>
-#include "ABoid.hpp"
+#include <vector>
+#include <unordered_map>
+#include "Boids.hpp"
 
 namespace boids {
 
     class Playground {
         public:
-            Playground(sf::RenderWindow *window) : _window(window) {};
+            Playground(sf::RenderWindow *window);
             ~Playground() {};
 
             void simulate();
@@ -20,9 +22,13 @@ namespace boids {
         private:
             sf::RenderWindow *_window;
             sf::Event _event;
-            IBoid *_boids;
+            std::vector<IBoid *> _boids;
+
+            sf::Sprite _skin;
 
             void pollEvent();
+            void simulateBoids();
+            void displayBoids();
     };
 
 }

@@ -10,6 +10,6 @@
 
 void boids::ABoid::simulate() {
     std::rand() % 2 ? this->_angle += 1 : this->_angle -= 1;
-
+    this->_angle = (this->_angle > 360 ? 0 : (this->_angle < 0 ? 360 : this->_angle));
     return;
 }

@@ -8,7 +8,7 @@
 #ifndef BOIDS_ABOIDS_HPP
 #define BOIDS_ABOIDS_HPP
 
-#include <vector>
+#include <string>
 #include "IBoid.hpp"
 
 namespace boids {
@@ -16,7 +16,14 @@ namespace boids {
     class ABoid : public IBoid {
 
         public :
-            ABoid(int speed, int range, double angle) : IBoid::IBoid(), _speed(speed), _detection_range(range), _angle(angle) {};
+            ABoid(std::string name, int speed, int range, double angle) :
+                IBoid::IBoid(), _name(name), _speed(speed), _detection_range(range), _angle(angle) {
+                Position pos;
+
+                pos.x = rand() % 1900;
+                pos.y = rand() % 1000;
+                this->_position = pos;
+            };
             ~ABoid() {};
 
             Position getPosition() override { return this->_position; };
@@ -28,9 +35,10 @@ namespace boids {
             void setSpeed(int speed) override { this->_speed = speed; };
             void setAngle(double angle) override { this->_angle = angle; };
 
-            virtual void simulate() override;
+            void simulate() override;
 
         private :
+            std::string _name;
             Position _position;
             int _speed;
             int _detection_range;
