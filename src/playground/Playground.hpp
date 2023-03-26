@@ -14,7 +14,7 @@ namespace boids {
 
     class Playground {
         public:
-            Playground(sf::RenderWindow *window);
+            Playground(sf::RenderWindow *window, int nbBoids);
             ~Playground() {};
 
             void simulate();
@@ -24,7 +24,7 @@ namespace boids {
             sf::Event _event;
             std::vector<IBoid *> _boids;
 
-            sf::Texture _skin;
+            sf::Sprite _skin;
 
             void pollEvent();
             void simulateBoids();

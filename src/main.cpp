@@ -15,7 +15,7 @@ int main(int argc, char const **argv, char const **env)
 {
     srand((unsigned int)time(0));
     sf::RenderWindow window(sf::VideoMode(1920, 1020), "SFML window");
-    boids::Playground playground(&window);
+    boids::Playground playground(&window, argv[1] ? stoi((std::string)argv[1]) : 50);
 
     std::cout << "Hello World !" << std::endl;
     playground.simulate();

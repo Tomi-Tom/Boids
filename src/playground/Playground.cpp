@@ -6,14 +6,14 @@
 #include "../factory/Factory.hpp"
 #include "Playground.hpp"
 
-boids::Playground::Playground(sf::RenderWindow *window) : _window(window) {
+boids::Playground::Playground(sf::RenderWindow *window, int nbBoids) : _window(window) {
     boids::Factory factory = boids::Factory();
     sf::Texture texture;
     texture.loadFromFile("assets/basic_boid.png");
     sf::Sprite sprite(texture);
     this->_skin = sprite;
 
-    for (int i = 0; i < 1000; i += 1) {
+    for (int i = 0; i < nbBoids; i += 1) {
         this->_boids.push_back(factory.createBoid("basic"));
     }
 }
