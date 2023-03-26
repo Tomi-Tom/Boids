@@ -11,8 +11,11 @@ boids::Playground::Playground(sf::RenderWindow *window, int nbBoids) : _window(w
     sf::Texture texture;
     texture.loadFromFile("assets/basic_boid.png");
     sf::Sprite sprite(texture);
-    this->_skin = sprite;
 
+    this->_skin = sprite;
+    float scale = 0.01;
+    this->_skin.setScale(scale, scale);
+    this->_skin.setOrigin(this->_skin.getLocalBounds().width / 2.0f, this->_skin.getLocalBounds().height / 2.0f);
     for (int i = 0; i < nbBoids; i += 1) {
         this->_boids.push_back(factory.createBoid("basic"));
     }
@@ -32,14 +35,10 @@ void boids::Playground::simulateBoids() {
 }
 
 void boids::Playground::displayBoids() {
-    float scale = 0.01;
 
     for (const auto& boid : this->_boids) {
         this->_skin.setPosition(boid->getPosition().x, boid->getPosition().y);
-        this->_skin.setOrigin(this->_skin.getLocalBounds().width / 2.0f, this->_skin.getLocalBounds().height / 2.0f);
         this->_skin.setRotation((boid->getAngle()));
-        this->_skin.setScale(scale, scale);
-
         this->_window->draw(this->_skin);
     }
 }
