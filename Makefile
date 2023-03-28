@@ -9,6 +9,7 @@ re: fclean all
 
 clean:
 	rm -rf build
+	rm -rf cmake-build-debug
 
 fclean: clean
 	rm -rf Boids
