@@ -8,6 +8,10 @@ Usage
 To run the simulation, you need to execute the following command in your terminal:
 
 ```
+make re
+```
+
+```
 ./boids [population-size]
 ```
 
