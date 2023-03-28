@@ -4,9 +4,17 @@
 
 #include "Playground.hpp"
 
+void Playground::handlePause() {
+    if (_playButton.isClicked())
+        _pause = false;
+    if (_pauseButton.isClicked())
+        _pause = true;
+}
+
 std::string Playground::run(sf::RenderWindow &window) {
     // run simulation
-    if (!_pauseButton.isClicked()) {
+    handlePause();
+    if (!_pause) {
         for (int i = 0; i < _nbBoids; i++) {
             _boids[i].simulate();
         }

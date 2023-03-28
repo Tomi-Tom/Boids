@@ -12,7 +12,7 @@
 
 class Playground : public IDisplay {
 public:
-    Playground() {
+    Playground() : _pause(false) {
         sf::Color color = sf::Color::White;
 
         // Setup les components UI
@@ -44,6 +44,7 @@ private:
     // Content
     size_t _nbBoids;
     std::vector<Boid> _boids;
+    bool _pause;
 
     // Components UI
     sf::RectangleShape _background;
@@ -55,6 +56,9 @@ private:
     Button _pauseButton;
     Button _playButton;
     Button _quitButton;
+
+    // Utils
+    void handlePause();
 
 };
 
