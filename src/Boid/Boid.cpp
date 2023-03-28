@@ -15,9 +15,14 @@ void Boid::display(sf::RenderWindow &window) {
 void Boid::simulate() {
     int direction = rand() % 2;
     if (direction == 0)
-        _angle += 1;
+        _angleChange += 0.05;
     else
-        _angle -= 1;
+        _angleChange -= 0.05;
+    if (_angleChange > _angleChangeMax)
+        _angleChange -= 0.05;
+    if (_angleChange < -_angleChangeMax)
+        _angleChange += 0.05;
+    _angle += _angleChange;
 
     _position.x += _speed * cos(_angle * M_PI / 180);
     _position.y += _speed * sin(_angle * M_PI / 180);

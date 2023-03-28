@@ -30,7 +30,7 @@ public:
         _plusButton = Button("+", sf::Vector2f(1200, 950), sf::Vector2f(50, 50), color);
 
         // Setup les boids
-        _nbBoids = 20;
+        _nbBoids = 100;
         for (size_t i = 0; i < _nbBoids; i++) {
             _boids.push_back(Boid());
         }

@@ -17,6 +17,8 @@ public:
         _size = 0.02;
         _speed = 0.3;
         _angle = rand() % 360;
+        _angleChange = 0;
+        _angleChangeMax = 0.3;
     }
     ~Boid() {};
 
@@ -30,6 +32,8 @@ private:
     double _size;
     double _speed;
     double _angle;
+    double _angleChange;
+    double _angleChangeMax;
 
 };
 
