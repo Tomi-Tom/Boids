@@ -8,6 +8,7 @@
 #include <SFML/Graphics.hpp>
 #include "IDisplay.hpp"
 #include "Button.hpp"
+#include "Boid.hpp"
 
 class Playground : public IDisplay {
 public:
@@ -27,6 +28,12 @@ public:
         _quitButton = Button("Quit", sf::Vector2f(1650, 950), sf::Vector2f(200, 50), color);
         _minusButton = Button("-", sf::Vector2f(1000, 950), sf::Vector2f(50, 50), color);
         _plusButton = Button("+", sf::Vector2f(1200, 950), sf::Vector2f(50, 50), color);
+
+        // Setup les boids
+        _nbBoids = 20;
+        for (size_t i = 0; i < _nbBoids; i++) {
+            _boids.push_back(Boid());
+        }
     };
     ~Playground() override {};
 
@@ -35,9 +42,8 @@ public:
 
 private:
     // Content
-    sf::Texture _texture;
-    sf::Sprite _sprite;
     size_t _nbBoids;
+    std::vector<Boid> _boids;
 
     // Components UI
     sf::RectangleShape _background;

@@ -11,6 +11,7 @@ include_directories(src/Simulation)
 include_directories(src/Menu)
 include_directories(src/Playground)
 include_directories(src/components/Button)
+include_directories(src/Boid)
 
 add_executable(Boids
         src/main.cpp
@@ -18,6 +19,7 @@ add_executable(Boids
         src/Menu/Menu.cpp
         src/Playground/Playground.cpp
         src/components/Button/Button.cpp
+        src/Boid/Boid.cpp
         )
 
 if (WIN32)

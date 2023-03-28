@@ -5,6 +5,12 @@
 #include "Playground.hpp"
 
 std::string Playground::run(sf::RenderWindow &window) {
+    // run simulation
+    if (!_pauseButton.isClicked()) {
+        for (int i = 0; i < _nbBoids; i++) {
+            _boids[i].simulate();
+        }
+    }
     display(window);
     if (_quitButton.isClicked())
         return "Menu";
@@ -12,22 +18,17 @@ std::string Playground::run(sf::RenderWindow &window) {
 }
 
 void Playground::display(sf::RenderWindow &window) {
-    // Setup text with number of boids
-    sf::Text text;
-    sf::Font font;
-    font.loadFromFile("assets/fonts/arial.ttf");
-    text.setString(std::to_string(_nbBoids));
-    text.setCharacterSize(32);
-    text.setFillColor(sf::Color::White);
-    text.setPosition(10, 10);
-
-    // Draw
     window.draw(_background);
+
+    for (int i = 0; i < _nbBoids; i++) {
+        _boids[i].display(window);
+    }
+
     window.draw(_ButtonContainer);
     _playButton.display(window);
     _quitButton.display(window);
     _plusButton.display(window);
     _minusButton.display(window);
     _pauseButton.display(window);
-    window.draw(text);
+
 }

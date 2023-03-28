@@ -10,6 +10,7 @@
 
 int main(int argc, char const **argv, char const **env)
 {
+    srand(time(NULL));
     Simulation simulation;
     simulation.run();
     return 0;
