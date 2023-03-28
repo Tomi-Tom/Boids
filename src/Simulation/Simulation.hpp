@@ -9,11 +9,13 @@
 #include <memory>
 #include "IDisplay.hpp"
 #include "Menu.hpp"
+#include "Playground.hpp"
 
 class Simulation {
 public:
     Simulation() : _window(sf::VideoMode(1920, 1080), "Boids") {
         _displays["Menu"] = std::make_unique<Menu>();
+        _displays["Playground"] = std::make_unique<Playground>();
         _currentDisplay = "Menu";
     }
 

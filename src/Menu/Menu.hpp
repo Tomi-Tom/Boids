@@ -2,7 +2,8 @@
 // Created by Tomi-Tom on 3/28/23.
 //
 
-#pragma once
+#ifndef BOIDS_MENU_HPP
+#define BOIDS_MENU_HPP
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
@@ -41,3 +42,5 @@ private:
     sf::RectangleShape _ButtonContainer;
 
 };
+
+#endif //BOIDS_MENU_HPP

@@ -9,12 +9,14 @@ include_directories(include)
 include_directories(include/Interface)
 include_directories(src/Simulation)
 include_directories(src/Menu)
+include_directories(src/Playground)
 include_directories(src/components/Button)
 
 add_executable(Boids
         src/main.cpp
         src/Simulation/Simulation.cpp
         src/Menu/Menu.cpp
+        src/Playground/Playground.cpp
         src/components/Button/Button.cpp
         )
 
