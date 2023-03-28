@@ -1,21 +1,25 @@
 cmake_minimum_required(VERSION 3.10)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_BUILD_TYPE Release)
 project(Boids)
 
 include_directories(include)
-include_directories(include/class)
-include_directories(include/class/interface)
-include_directories(include/class/abstract)
-include_directories(src/playground)
+include_directories(include/Interface)
+include_directories(src/Simulation)
+include_directories(src/Menu)
+include_directories(src/Playground)
+include_directories(src/components/Button)
+include_directories(src/Boid)
 
 add_executable(Boids
         src/main.cpp
-        include/class/abstract/ABoid.cpp
-        src/playground/Playground.cpp
-        src/factory/Factory.cpp
+        src/Simulation/Simulation.cpp
+        src/Menu/Menu.cpp
+        src/Playground/Playground.cpp
+        src/components/Button/Button.cpp
+        src/Boid/Boid.cpp
         )
 
 if (WIN32)
@@ -32,6 +36,5 @@ elseif (UNIX AND NOT APPLE)
             sfml-graphics
             sfml-window
             sfml-system
-            pthread
             )
 endif()
