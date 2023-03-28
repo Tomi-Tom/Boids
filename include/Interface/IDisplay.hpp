@@ -11,6 +11,7 @@ class IDisplay {
 public:
     virtual ~IDisplay() = default;
 
+    virtual std::string run(sf::RenderWindow &window) = 0;
     virtual void display(sf::RenderWindow &window) = 0;
 };
 

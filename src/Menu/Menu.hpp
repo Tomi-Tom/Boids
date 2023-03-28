@@ -21,13 +21,13 @@ public:
         _ButtonContainer.setFillColor(sf::Color::Red);
 
         // Setup les boutons
-        _playButton = Button(sf::Vector2f(100, 100), sf::Vector2f(250, 75), color);
-        _settingsButton = Button(sf::Vector2f(100, 200), sf::Vector2f(250, 75), color);
-        _quitButton = Button(sf::Vector2f(100, 300), sf::Vector2f(250, 75), color);
+        _playButton = Button("Play", sf::Vector2f(100, 100), sf::Vector2f(250, 75), color);
+        _quitButton = Button("Quit", sf::Vector2f(100, 800), sf::Vector2f(250, 75), color);
 
     };
     ~Menu() override {};
 
+    std::string run(sf::RenderWindow &window) override;
     void display(sf::RenderWindow &window) override;
 
 private:

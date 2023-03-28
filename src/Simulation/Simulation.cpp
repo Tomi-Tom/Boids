@@ -9,13 +9,16 @@ void Simulation::pollEvents() {
         if (_event.type == sf::Event::Closed)
             _window.close();
     }
+    if (_currentDisplay == "Quit")
+        _window.close();
 }
 
 void Simulation::run() {
     while (_window.isOpen()) {
         pollEvents();
         _window.clear();
-        _displays[_currentDisplay]->display(_window);
+        if (_currentDisplay != "Quit")
+            _currentDisplay = _displays[_currentDisplay]->run(_window);
         _window.display();
     }
 }
