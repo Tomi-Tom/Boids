@@ -23,10 +23,10 @@ public:
         _ButtonContainer.setFillColor(sf::Color(63, 57, 68));
 
         // Setup les boutons
-        _playButton = Button("Play", sf::Vector2f(70, 950), sf::Vector2f(200, 50), color);
-        _pauseButton = Button("Pause", sf::Vector2f(280, 950), sf::Vector2f(200, 50), color);
+        _playButton = Button("Play", sf::Vector2f(50, 950), sf::Vector2f(100, 50), color);
+        _pauseButton = Button("Pause", sf::Vector2f(160, 950), sf::Vector2f(100, 50), color);
         _quitButton = Button("Quit", sf::Vector2f(1650, 950), sf::Vector2f(200, 50), color);
-        _minusButton = Button("-", sf::Vector2f(1000, 950), sf::Vector2f(50, 50), color);
+        _minusButton = Button(" -", sf::Vector2f(1000, 950), sf::Vector2f(50, 50), color);
         _plusButton = Button("+", sf::Vector2f(1200, 950), sf::Vector2f(50, 50), color);
 
         // Setup les boids
@@ -63,6 +63,7 @@ private:
 
     // Utils
     void handlePause();
+    void handleNbBoids();
 
 };
 
