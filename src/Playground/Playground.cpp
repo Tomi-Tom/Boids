@@ -4,6 +4,17 @@
 
 #include "Playground.hpp"
 
+void Playground::handleNbBoids() {
+    if (_plusButton.isClicked() && _nbBoids < 1000) {
+        _nbBoids++;
+        _boids.push_back(Boid());
+    }
+    if (_minusButton.isClicked() && _nbBoids > 0) {
+        _nbBoids--;
+        _boids.pop_back();
+    }
+}
+
 void Playground::handlePause() {
     if (_playButton.isClicked())
         _pause = false;
@@ -14,6 +25,7 @@ void Playground::handlePause() {
 std::string Playground::run(sf::RenderWindow &window) {
     // run simulation
     handlePause();
+    handleNbBoids();
     if (!_pause) {
         for (int i = 0; i < _nbBoids; i++) {
             _boids[i].simulate();
@@ -26,6 +38,15 @@ std::string Playground::run(sf::RenderWindow &window) {
 }
 
 void Playground::display(sf::RenderWindow &window) {
+    sf::Text text;
+    sf::Font font;
+    font.loadFromFile("assets/fonts/arial.ttf");
+    text.setFont(font);
+    text.setString("Boids: " + std::to_string(_nbBoids));
+    text.setCharacterSize(24);
+    text.setFillColor(sf::Color::White);
+    text.setPosition(1070, 960);
+
     window.draw(_background);
 
     for (int i = 0; i < _nbBoids; i++) {
@@ -41,5 +62,6 @@ void Playground::display(sf::RenderWindow &window) {
     _plusButton.display(window);
     _minusButton.display(window);
     _pauseButton.display(window);
+    window.draw(text);
 
 }

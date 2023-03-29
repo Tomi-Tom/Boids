@@ -30,7 +30,7 @@ void Button::handleState(sf::RenderWindow &window) {
 
 void Button::display(sf::RenderWindow &window) {
     sf::Text text;
-    sf::Vector2f textPosition = {_position.x + _size.x / 2 - ((_text.length() / 2) * 15) - (_text.length() % 2 ? 6 : 0) , _position.y + _size.y / 2 - 20};
+    sf::Vector2f textPosition = {_position.x + _size.x / 2 - ((_text.length() / 2) * 15) - (_text.length() % 2 ? 11 : 0) , _position.y + _size.y / 2 - 20};
 
     if (_state == STATE::IDLE) {
         _shape.setFillColor(_color);
