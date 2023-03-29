@@ -49,7 +49,7 @@ void Button::display(sf::RenderWindow &window) {
     text.setFont(_font);
     text.setString(_text);
     text.setCharacterSize(32);
-    text.setFillColor(sf::Color::Black);
+    text.setFillColor(sf::Color(63, 57, 68));
     handleState(window);
 
     window.draw(_shape);

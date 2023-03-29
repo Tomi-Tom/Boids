@@ -29,7 +29,10 @@ void Playground::display(sf::RenderWindow &window) {
     window.draw(_background);
 
     for (int i = 0; i < _nbBoids; i++) {
-        _boids[i].display(window);
+        _skinSprite.setPosition(_boids[i].getPosition());
+        _skinSprite.setRotation(_boids[i].getAngle() + 90);
+        _skinSprite.setScale(sf::Vector2f(_boids[i].getSize(), _boids[i].getSize()));
+        window.draw(_skinSprite);
     }
 
     window.draw(_ButtonContainer);

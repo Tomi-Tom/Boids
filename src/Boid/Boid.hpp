@@ -10,9 +10,6 @@
 class Boid {
 public:
     Boid() {
-        _texture.loadFromFile("assets/skins/basic_boid.png");
-        _sprite.setTexture(_texture);
-        _sprite.setOrigin(sf::Vector2f(_texture.getSize().x / 2, _texture.getSize().y / 2));
         _position = sf::Vector2f(rand() % 1920, rand() % 910);
         _size = 0.02;
         _speed = 0.3;
@@ -22,12 +19,13 @@ public:
     }
     ~Boid() {};
 
-    void display(sf::RenderWindow &window);
     void simulate();
 
+    sf::Vector2f getPosition() { return _position; }
+    double getSize() { return _size; }
+    double getAngle() { return _angle; }
+
 private:
-    sf::Texture _texture;
-    sf::Sprite _sprite;
     sf::Vector2f _position;
     double _size;
     double _speed;

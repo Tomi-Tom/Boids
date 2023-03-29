@@ -34,6 +34,8 @@ public:
         for (size_t i = 0; i < _nbBoids; i++) {
             _boids.push_back(Boid());
         }
+        _skinTexture.loadFromFile("assets/skins/basic_boid.png");
+        _skinSprite.setTexture(_skinTexture);
     };
     ~Playground() override {};
 
@@ -45,6 +47,8 @@ private:
     size_t _nbBoids;
     std::vector<Boid> _boids;
     bool _pause;
+    sf::Texture _skinTexture;
+    sf::Sprite _skinSprite;
 
     // Components UI
     sf::RectangleShape _background;
