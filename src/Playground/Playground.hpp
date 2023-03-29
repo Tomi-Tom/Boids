@@ -13,14 +13,14 @@
 class Playground : public IDisplay {
 public:
     Playground() : _pause(false) {
-        sf::Color color = sf::Color::White;
+        sf::Color color = sf::Color(253, 217, 163);
 
         // Setup les components UI
         _background = sf::RectangleShape(sf::Vector2f(1920, 1080));
-        _background.setFillColor(sf::Color::Black);
+        _background.setFillColor(sf::Color(48, 43, 52));
         _ButtonContainer = sf::RectangleShape(sf::Vector2f(1920, 200));
         _ButtonContainer.setPosition(sf::Vector2f(0, 920));
-        _ButtonContainer.setFillColor(sf::Color::Blue);
+        _ButtonContainer.setFillColor(sf::Color(63, 57, 68));
 
         // Setup les boutons
         _playButton = Button("Play", sf::Vector2f(70, 950), sf::Vector2f(200, 50), color);

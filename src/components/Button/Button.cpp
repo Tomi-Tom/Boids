@@ -37,11 +37,11 @@ void Button::display(sf::RenderWindow &window) {
         _shape.setPosition(_position);
         text.setPosition(textPosition);
     } else if (_state == STATE::HOVER) {
-        _shape.setFillColor(sf::Color(_color.r - 50, _color.g - 50, _color.b - 50));
+        _shape.setFillColor(sf::Color(_color.r - 25, _color.g - 25, _color.b - 25));
         _shape.setPosition(_position.x + 2, _position.y + 2);
         text.setPosition(textPosition.x + 2, textPosition.y + 2);
     } else if (_state == STATE::CLICKED) {
-        _shape.setFillColor(sf::Color(_color.r - 100, _color.g - 100, _color.b - 100));
+        _shape.setFillColor(sf::Color(_color.r - 50, _color.g - 50, _color.b - 50));
         _shape.setPosition(_position.x + 4, _position.y + 4);
         text.setPosition(textPosition.x + 4, textPosition.y + 4);
     }
