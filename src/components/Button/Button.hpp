@@ -26,7 +26,10 @@ public:
         // Setup Font
         _font.loadFromFile("assets/fonts/arial.ttf");
     };
-    ~Button() {};
+    ~Button() {
+        _shape.~RectangleShape();
+
+    };
 
     bool isClicked();
     void display(sf::RenderWindow &window);

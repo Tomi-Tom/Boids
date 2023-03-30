@@ -18,6 +18,9 @@ public:
         _displays["Playground"] = std::make_unique<Playground>();
         _currentDisplay = "Menu";
     }
+    ~Simulation() {
+        _displays.clear();
+    };
 
     void run();
 

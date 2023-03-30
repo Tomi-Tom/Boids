@@ -5,7 +5,7 @@
 #include "Playground.hpp"
 
 void Playground::handleNbBoids() {
-    if (_plusButton.isClicked() && _nbBoids < 1000) {
+    if (_plusButton.isClicked() && _nbBoids < 5000) {
         _nbBoids++;
         _boids.push_back(Boid());
     }
@@ -49,10 +49,10 @@ void Playground::display(sf::RenderWindow &window) {
 
     window.draw(_background);
 
-    for (int i = 0; i < _nbBoids; i++) {
-        _skinSprite.setPosition(_boids[i].getPosition());
-        _skinSprite.setRotation(_boids[i].getAngle() + 90);
-        _skinSprite.setScale(sf::Vector2f(_boids[i].getSize(), _boids[i].getSize()));
+    for (Boid boid : _boids ) {
+        _skinSprite.setPosition(boid.getPosition());
+        _skinSprite.setRotation(boid.getAngle() + 90);
+        _skinSprite.setScale(sf::Vector2f(boid.getSize(), boid.getSize()));
         window.draw(_skinSprite);
     }
 

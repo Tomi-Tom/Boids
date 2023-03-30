@@ -37,7 +37,18 @@ public:
         _skinTexture.loadFromFile("assets/skins/basic_boid.png");
         _skinSprite.setTexture(_skinTexture);
     };
-    ~Playground() override {};
+    ~Playground() override {
+        _boids.clear();
+        _playButton.~Button();
+        _pauseButton.~Button();
+        _quitButton.~Button();
+        _minusButton.~Button();
+        _plusButton.~Button();
+        _background.~RectangleShape();
+        _ButtonContainer.~RectangleShape();
+        _skinTexture.~Texture();
+        _skinSprite.~Sprite();
+    };
 
     std::string run(sf::RenderWindow &window) override;
     void display(sf::RenderWindow &window) override;

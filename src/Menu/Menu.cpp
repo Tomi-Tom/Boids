@@ -16,8 +16,7 @@ std::string Menu::run(sf::RenderWindow &window) {
 
 void Menu::display(sf::RenderWindow &window) {
     window.draw(_background);
-    window.draw(_ButtonContainer);
+    window.draw(_buttonContainer);
     _playButton.display(window);
-    _settingsButton.display(window);
     _quitButton.display(window);
 }

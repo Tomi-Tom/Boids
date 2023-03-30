@@ -15,9 +15,9 @@ public:
         _speed = 0.3;
         _angle = rand() % 360;
         _angleChange = 0;
-        _angleChangeMax = 0.3;
+        _angleChangeMax = 0.4;
     }
-    ~Boid() {};
+    ~Boid() {}
 
     void simulate();
 
